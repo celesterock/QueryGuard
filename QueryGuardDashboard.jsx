@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./QueryGuardDashboard.css";
-
+import { Link } from 'react-router-dom';
 
 const cardData = [
   {
@@ -60,12 +60,12 @@ export default function QueryGuardDashboard() {
                 <div key={idx}>{item}</div>
               ))}
             </div>
-            <button
-              onClick={() => window.location.href = link}
-              className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-2xl"
-            >
-              View More
-            </button>
+            <Link
+ 		          to={`/${link.replace('.html', '')}`}
+  		        className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-2xl text-center"
+	          >
+  		        View More
+	          </Link>
           </div>
         ))}
 
